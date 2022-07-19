@@ -1,0 +1,11 @@
+{
+  "name": "nest-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/yugo-ibuki/nest-graphql.git",
+  "author": "yugo-ibuki <y.ibuki91@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/cli": "^9.0.0"
+  }
+}
