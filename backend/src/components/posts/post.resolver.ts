@@ -2,7 +2,7 @@ import { Args, Query, Resolver } from '@nestjs/graphql';
 import { PostModel } from './interfaces/post.model';
 
 @Resolver((of) => PostModel)
-export class PostResolvers {
+export class PostResolver {
   constructor() {}
 
   @Query(() => [PostModel], { name: 'posts', nullable: true })
@@ -19,5 +19,3 @@ export class PostResolvers {
     ];
   }
 }
-
-export class PostsResolvers {}
