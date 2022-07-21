@@ -1,21 +1,13 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { PostModel } from './interfaces/post.model';
+import { PostService } from './post.service';
 
 @Resolver((of) => PostModel)
 export class PostResolver {
-  constructor() {}
+  constructor(private PostService: PostService) {}
 
   @Query(() => [PostModel], { name: 'posts', nullable: true })
-  async getPosts() {
-    return [
-      {
-        id: '1',
-        title: 'NestJS is so good.',
-      },
-      {
-        id: '2',
-        title: 'GraphQL is so good.',
-      },
-    ];
+  async posts() {
+    return this.PostService.getPosts();
   }
 }
