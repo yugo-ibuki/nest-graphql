@@ -9,13 +9,13 @@ import { validate } from './config/environments/env-validator';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      envFilePath: ['.env.development.local'],
-      validate,
-    }),
     GraphQLModule.forRoot({
       autoSchemaFile: path.join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
+    }),
+    ConfigModule.forRoot({
+      envFilePath: ['.env.development.local'],
+      validate,
     }),
     PostsModule,
   ],
